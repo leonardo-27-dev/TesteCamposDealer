@@ -1,0 +1,5 @@
+Ola Tester
+
+
+Para essa aplicação rodar corretamente, eu deixei os script's de criação das Tabelas necessarias para realizar
+o SELECT, UPDATE, INSERT, E DELETE no SQL2019, após criar, você deverá realizar a troca da string de conexão e ai sijm, rodar a aplicação normalmente.
