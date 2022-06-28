@@ -1,0 +1,21 @@
+﻿@{
+    var Vendas = ViewBag.vendas;
+}
+
+@{
+    ViewData["Title"] = "Confirmação Deletar Vendas";
+}
+
+<form asp-controller="Vendas" asp-action="Deleta" method="post">
+    <div class="text-center">
+        <h3> Você Deseja Deletar esta Venda?</h3>
+    </div>
+    <div hidden class="form-group" style="margin-top: 15px">
+        <label hidden for="venda"><b>Id da Venda</b></label>
+        <input hidden type="text" id="idVenda" name="idVenda" class="form-control" value="@Vendas.idVenda">
+    </div>
+    <div class="d-grip gap-2 d-md-flex" style="margin-top: 15px;justify-content: center;">
+        <button type="submit" class="btn btn-danger" role="button" style="width: 100%">Deletar</button>
+        <a asp-controller="Vendas" asp-action="Index" class="btn btn-warning" style="width: 100%" role="button">Cancelar</a>
+    </div>
+</form>

@@ -1,0 +1,33 @@
+﻿@{
+    var clientes = ViewBag.Clientes;
+}
+
+@{
+    ViewData["Title"] = "Editar Clientes";
+}
+
+<div class="text-center">
+
+    <h1 class="display-4">Editar Cliente</h1>
+
+</div>
+
+<form asp-controller="Clientes" asp-action="Salvar" method="post">
+    <div hidden class="form-group" style="margin-top: 15px">
+        <label hidden for="Cliente"><b>Id Cliente</b></label>
+        <input hidden type="text" id="idCliente" name="idCliente" class="form-control" value="@clientes.idCliente">
+    </div>
+    <div class="form-group" style="margin-top: 15px">
+        <label for="Cliente"><b>Cliente</b></label>
+        <input type="text" id="nmCliente" name="nmCliente" class="form-control" placeholder="Digite o Nome do Cliente" value="@clientes.nmCliente">
+    </div>
+    <div class="form-group" style="margin-top: 15px">
+        <label for="Cidade"><b>Cidade</b></label>
+        <input type="text" id="nmCidade" name="nmCidade" class="form-control" placeholder="Digite o Nome da Cidade" value="@clientes.nmCidade">
+    </div>
+
+    <div class="d-grip gap-2 d-md-flex" style="margin-top: 15px">
+        <button type="submit" class="btn btn-success" role="button" style="width: 100%">Salvar</button>
+        <a class="btn btn-danger" role="button" asp-controller="Clientes" asp-action="Index" style="width: 100%">Cancelar</a>
+    </div>
+</form>

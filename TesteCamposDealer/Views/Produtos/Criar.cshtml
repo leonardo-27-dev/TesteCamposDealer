@@ -1,0 +1,26 @@
+﻿@model ClienteModel
+@{
+    ViewData["Title"] = "Criar Venda";
+}
+
+<div class="text-center">
+
+    <h1 class="display-4">Cadastrar Produto</h1>
+
+</div>
+
+<form asp-controller="Produtos" asp-action="Salvar" method="post">
+    <div class="form-group"  style="margin-top: 15px">
+        <label for="Produtos"><b>Nome do Produto</b></label>
+        <input type="text" id="dscProduto" name="dscProduto" class="form-control" placeholder="Digite o Nome do Produto">
+    </div>
+    <div class="form-group" style="margin-top: 15px">
+        <label for="ValorUnitario"><b>Valor do Produto</b></label>
+        <input type="text" id="qtdVenda" name="qtdVenda" class="form-control" placeholder="Digite o Valor Unitario">
+    </div>
+
+    <div class="d-grip gap-2 d-md-flex" style="margin-top: 15px">
+        <button type="submit" class="btn btn-success" role="button" style="width: 100%">Adicionar</button>
+        <a asp-controller="Produtos" asp-action="Index" class="btn btn-danger" asp-for="nmCidade" style="width: 100%" role="button">Cancelar</a>
+    </div>
+</form>

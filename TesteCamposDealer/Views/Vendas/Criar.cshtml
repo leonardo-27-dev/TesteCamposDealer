@@ -1,0 +1,34 @@
+﻿@model ClienteModel
+@{
+    ViewData["Title"] = "Criar Venda";
+}
+
+<div class="text-center">
+
+    <h1 class="display-4">Cadastrar Venda</h1>
+
+</div>
+
+<form asp-controller="Vendas" asp-action="Salvar" method="post">
+    <div class="form-group" style="margin-top: 15px">
+        <label for="Cliente"><b>Id do Cliente</b></label>
+        <input type="text" id="idCliente" name="idCliente" class="form-control" placeholder="Digite o Id do Cliente">
+    </div>
+    <div class="form-group" style="margin-top: 15px">
+        <label for="Produto"><b>Id do Produto</b></label>
+        <input type="text" id="idProduto" name="idProduto" class="form-control" placeholder="Digite o Id do Produto">
+    </div>
+    <div class="form-group" style="margin-top: 15px">
+        <label for="Quantiade"><b>Quantiade</b></label>
+        <input type="text" id="qtdVenda" name="qtdVenda" class="form-control" placeholder="Digite a Quantidade">
+    </div>
+    <div class="form-group" style="margin-top: 15px">
+        <label for="Valor Unitario"><b>Valor Unitario</b></label>
+        <input type="text" id="vlrUnitarioVenda" name="vlrUnitarioVenda" class="form-control" placeholder="Digite o Valor Unitario">
+    </div>
+
+    <div class="d-grip gap-2 d-md-flex" style="margin-top: 15px">
+        <button type="submit" class="btn btn-success" role="button" style="width: 100%">Adicionar</button>
+        <a asp-controller="Vendas" asp-action="Index" class="btn btn-danger" asp-for="nmCidade" style="width: 100%" role="button">Cancelar</a>
+    </div>
+</form>

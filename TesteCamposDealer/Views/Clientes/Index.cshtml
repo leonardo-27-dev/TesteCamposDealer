@@ -1,0 +1,34 @@
+﻿@{
+    ViewData["Title"] = "Listagem de Clientes";
+}
+<div class="text-center">
+
+    <h1 class="display-4">Listagem de Clientes</h1>
+    <table class="table table-striped table-dark">
+        <thead class="thead-dark">
+            <tr>
+                <th>Id do Cliente</th>
+                <th>Nome do Cliente</th>
+                <th>Cidade do Cliente</th>
+                <th></th>
+            </tr>
+        </thead>
+        @foreach (var item in ViewBag.Lista)
+        {
+            <tr>
+                <td style="padding: 0px;white-space: nowrap; ">@item.idCliente</td>
+                <td style="padding: 0px;white-space: nowrap; ">@item.nmCliente</td>
+                <td style="padding: 0px;white-space: nowrap; ">@item.nmCidade</td>
+                <td style="padding: 0px;white-space: nowrap; ">
+                    <div class="group" role="group">
+                        <a href="Clientes/Editar/@item.idCliente" role="button" type="button" class="btn btn-warning">Editar</a>
+                        <a href="Clientes/DeletarConfirmacao/@item.idCliente" role="button" type="button" class="btn btn-danger">Deletar</a>
+                    </div>
+                </td>
+            </tr>
+        }
+    </table>
+    <div class="d-grip gap-2 d-md-flex" style="justify-content: center;">
+        <a asp-controller="Clientes" asp-action="Criar" role="button" type="button" class="btn btn-success">Adicionar Novo Cliente</a>
+    </div>
+</div>

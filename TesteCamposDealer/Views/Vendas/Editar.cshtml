@@ -1,0 +1,42 @@
+﻿@{
+    var Vendas = ViewBag.Vendas;
+}
+
+@{
+    ViewData["Title"] = "Editar Vendas";
+}
+
+
+<div class="text-center">
+
+    <h1 class="display-4">Editar Vendas</h1>
+
+</div>
+
+<form asp-controller="Vendas" asp-action="Salvar" method="post">
+    <div hidden class="form-group" style="margin-top: 15px">
+        <label hidden for="venda"><b>Id da Venda</b></label>
+        <input hidden type="text" id="idVenda" name="idVenda" class="form-control" value="@Vendas.idVenda">
+    </div>
+    <div class="form-group" style="margin-top: 15px">
+        <label for="Cliente"><b>Cliente</b></label>
+        <input type="text" id="PesquisaCliente" name="idCliente" class="form-control" placeholder="Digite o Id do CLiente" value="@Vendas.idCliente">
+    </div>
+    <div class="form-group" style="margin-top: 15px">
+        <label for="Quantidade"><b>Produto</b></label>
+        <input type="text" id="PesquisaProduto" name="idProduto" class="form-control" placeholder="Digite o Id do Produto" value="@Vendas.idProduto">
+    </div>
+    <div class="form-group" style="margin-top: 15px">
+        <label for="Quantidade"><b>Quantidade</b></label>
+        <input type="text" id="qtdVenda" name="qtdVenda" class="form-control" placeholder="Digite a Quantidade da Venda" value="@Vendas.qtdVenda">
+    </div>
+    <div class="form-group" style="margin-top: 15px">
+        <label for="ValorUnitario"><b>Valor Unitario</b></label>
+        <input type="text" id="vlrUnitarioVenda" name="vlrUnitarioVenda" class="form-control" placeholder="Digite o Valor Unitatio da Venda" value="@Vendas.vlrUnitarioVenda">
+    </div>
+
+    <div class="d-grip gap-2 d-md-flex" style="margin-top: 15px">
+        <button type="submit" class="btn btn-success" role="button" style="width: 100%">Salvar</button>
+        <a class="btn btn-danger" role="button" asp-controller="Vendas" asp-action="Index" style="width: 100%">Cancelar</a>
+    </div>
+</form>
